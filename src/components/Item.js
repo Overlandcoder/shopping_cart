@@ -9,9 +9,14 @@ const Item = (props) => {
     id: uniqid()
   });
 
-  const handleClick = (info) => {
+  const handleClick = (event) => {
+    event.preventDefault();
     setInfo({...info, id: uniqid()});
     props.handleClick(info);
+  }
+
+  const handleChange = (event) => {
+    setInfo({ ...info, quantity: event.target.value });
   }
 
   return (
@@ -20,7 +25,11 @@ const Item = (props) => {
       <h4>{props.name}</h4>
       <div>${props.price}</div>
       <div className="purchase-info">
-        <button onClick={() => handleClick(info)}>Add to cart</button>
+        <form>
+          <label htmlFor="quantity" id="quantity">Quantity</label>
+          <input onChange={handleChange} type="text" id="quantity"></input>
+          <button type="submit" onClick={handleClick}>Add to cart</button>
+        </form>
       </div>
     </div>
   )

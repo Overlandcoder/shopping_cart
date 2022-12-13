@@ -12,7 +12,7 @@ const App = () => {
 
   const handleClick = info => {
     setCartItems(cartItems.concat(info));
-    setCartTotal(cartTotal + info.price);
+    setCartTotal(cartTotal + (info.quantity * info.price));
   }
 
   return (

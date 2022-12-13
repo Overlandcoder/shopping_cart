@@ -8,7 +8,7 @@ const Cart = (props) => {
       <div>
         {props.items.map(item => {
           return <div key={item.id}>
-            {item.name} - ${item.price}
+            {item.quantity} {item.name} - ${item.quantity * item.price}
           </div>
         })}
       </div>
