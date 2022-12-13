@@ -1,15 +1,6 @@
-import React, { useState } from "react";
-import uniqid from "uniqid";
+import React from "react";
 
 const Cart = (props) => {
-  const [total, setTotal] = useState(0);
-
-  const totalAmount = () => {
-    let total = 0;
-    props.items.forEach(item => total += item.price);
-    return total;
-  }
-
   return(
     <div>
       <h2>Cart</h2>
@@ -21,7 +12,13 @@ const Cart = (props) => {
           </div>
         })}
       </div>
-      <h3>Total: {() => totalAmount}</h3>
+      {props.total > 0 ?
+        <div>
+          <h3>Total: ${props.total}</h3>
+          <button onClick={() => console.log("This does nothing")}>Proceed to checkout</button>
+        </div>
+      : ""
+      }
     </div>
   )
 }

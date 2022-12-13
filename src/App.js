@@ -8,7 +8,12 @@ import { useState } from "react";
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
-  const handleClick = info => setCartItems(cartItems.concat(info));
+  const [cartTotal, setCartTotal] = useState(0);
+
+  const handleClick = info => {
+    setCartItems(cartItems.concat(info));
+    setCartTotal(cartTotal + info.price);
+  }
 
   return (
     <Router>
@@ -17,7 +22,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop handleClick={handleClick} />} />
-          <Route path="/cart" element={<Cart items={cartItems} />} />
+          <Route path="/cart" element={<Cart items={cartItems} total={cartTotal} />} />
         </Routes>
       </div>
     </Router>
