@@ -11,7 +11,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 7vh;
+  min-height: 70px;
   background-color: grey;
   color: white;
 }
@@ -21,5 +21,14 @@ nav {
   list-style: none;
   display: flex;
   justify-content: flex-end;
-  gap: 25px;
+  gap: 30px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: rgb(227, 227, 227);
 }
