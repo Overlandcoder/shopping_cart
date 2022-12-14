@@ -20,9 +20,10 @@ const App = () => {
       <div className="App">
         <Nav cartItems={cartItems.length} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop handleClick={handleClick} />} />
-          <Route path="/cart" element={<Cart items={cartItems} total={cartTotal} />} />
+          <Route path="/" exact element={<Home />} />
+          <Route path="/shopping_cart" exact element={<Home />} />
+          <Route path="/shopping_cart/shop" element={<Shop handleClick={handleClick} />} />
+          <Route path="/shopping_cart/cart" element={<Cart items={cartItems} total={cartTotal} />} />
         </Routes>
       </div>
     </Router>
