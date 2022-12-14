@@ -11,7 +11,7 @@ const Item = (props) => {
 
   const handleClick = event => {
     event.preventDefault();
-    setInfo({...info, id: uniqid(), quantity: 1});
+    setInfo({ ...info, id: uniqid(), quantity: 1 });
     props.handleClick(info);
   }
 

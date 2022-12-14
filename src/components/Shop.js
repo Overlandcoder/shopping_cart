@@ -2,7 +2,7 @@ import React from "react";
 import Item from "./Item";
 
 const Shop = (props) => {
-  return(
+  return (
     <div className="shop">
       <h3>Shop</h3>
       <div className="items">

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Cart = (props) => {
-  return(
+  return (
     <div>
       <h2>Cart</h2>
       <h3>{props.items.length} items</h3>
@@ -17,7 +17,7 @@ const Cart = (props) => {
           <h3>Total: ${props.total}</h3>
           <button onClick={() => console.log("This does nothing")}>Proceed to checkout</button>
         </div>
-      : ""
+        : ""
       }
     </div>
   )

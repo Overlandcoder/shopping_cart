@@ -18,7 +18,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <Nav cartItems={cartItems.length}/>
+        <Nav cartItems={cartItems.length} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop handleClick={handleClick} />} />
