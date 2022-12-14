@@ -9,19 +9,24 @@ const Item = (props) => {
     id: uniqid()
   });
 
-  const handleClick = (event) => {
+  const handleClick = event => {
     event.preventDefault();
     setInfo({...info, id: uniqid(), quantity: 1});
     props.handleClick(info);
   }
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     setInfo({ ...info, quantity: event.target.value });
   }
 
-  const increment = (event) => {
+  const increment = event => {
     event.preventDefault();
     setInfo({ ...info, quantity: parseInt(info.quantity) + 1 });
+  }
+
+  const decrement = event => {
+    event.preventDefault();
+    setInfo({ ...info, quantity: parseInt(info.quantity) - 1 });
   }
 
   return (
@@ -35,7 +40,7 @@ const Item = (props) => {
           <input onChange={handleChange} type="text" id="quantity" value={info.quantity}></input>
           <div className="increment-decrement">
             <button onClick={increment}>+</button>
-            <button>-</button>
+            <button onClick={decrement}>-</button>
           </div>
           <button type="submit" onClick={handleClick}>Add to cart</button>
         </form>
